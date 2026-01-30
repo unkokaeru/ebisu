@@ -4,7 +4,6 @@ import 'package:ebisu/shared/services/database_service.dart';
 import 'package:ebisu/shared/models/routine_item_model.dart';
 import 'package:ebisu/shared/models/routine_completion_model.dart';
 import 'package:ebisu/shared/models/player_profile_model.dart';
-import 'package:ebisu/shared/models/skill_model.dart';
 import 'package:ebisu/shared/models/achievement_model.dart';
 import 'package:ebisu/core/utilities/experience_calculator.dart';
 import 'package:ebisu/core/utilities/date_time_utilities.dart';
@@ -134,13 +133,11 @@ class RoutineController {
         .dateBetween(today, tomorrow)
         .findFirst();
 
-    if (completion == null) {
-      completion = RoutineCompletion()
-        ..routineType = routineType.index
-        ..date = today
-        ..completedItemIds = []
-        ..isFullyCompleted = false;
-    }
+    completion ??= RoutineCompletion()
+      ..routineType = routineType.index
+      ..date = today
+      ..completedItemIds = []
+      ..isFullyCompleted = false;
 
     if (isCompleted) {
       if (!completion.completedItemIds.contains(itemId)) {

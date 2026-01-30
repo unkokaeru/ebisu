@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ebisu/core/configuration/string_constants.dart';
 import 'package:ebisu/core/configuration/numeric_constants.dart';
 import 'package:ebisu/core/configuration/icon_constants.dart';

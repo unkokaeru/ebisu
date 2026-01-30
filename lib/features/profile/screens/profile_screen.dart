@@ -9,8 +9,6 @@ import 'package:ebisu/core/configuration/color_constants.dart';
 import 'package:ebisu/core/configuration/route_constants.dart';
 import 'package:ebisu/core/utilities/experience_calculator.dart';
 import 'package:ebisu/features/profile/providers/player_profile_provider.dart';
-import 'package:ebisu/features/progress/providers/organization_provider.dart';
-import 'package:ebisu/shared/widgets/experience_progress_bar.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -99,7 +97,6 @@ class ProfileScreen extends ConsumerWidget {
     int longestStreak,
   ) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
 
     return Container(
       decoration: BoxDecoration(
@@ -453,10 +450,10 @@ class ProfileScreen extends ConsumerWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     
     // Responsive: more columns on wider screens, with max card width
-    final maxCardWidth = 110.0;
-    final minCardWidth = 90.0;
-    final spacing = 8.0;
-    final horizontalPadding = 32.0;
+    const maxCardWidth = 110.0;
+    const minCardWidth = 90.0;
+    const spacing = 8.0;
+    const horizontalPadding = 32.0;
     final availableWidth = screenWidth - horizontalPadding;
     
     // Calculate how many cards fit

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /// Numeric constants for the entire application.
 /// All magic numbers should be defined here for easy adjustment.
 class NumericConstants {

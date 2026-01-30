@@ -334,7 +334,7 @@ class HomeScreen extends ConsumerWidget {
                   child: _QuickActionButton(
                     icon: IconConstants.actionAdd,
                     label: StringConstants.todosAddTask,
-                    onTap: () => context.push(RouteConstants.pathTodos + '/add'),
+                    onTap: () => context.push('${RouteConstants.pathTodos}/add'),
                   ),
                 ),
                 const SizedBox(width: NumericConstants.paddingSmall),
@@ -342,7 +342,7 @@ class HomeScreen extends ConsumerWidget {
                   child: _QuickActionButton(
                     icon: IconConstants.actionSpin,
                     label: StringConstants.todosSpinWheel,
-                    onTap: () => context.push(RouteConstants.pathTodos + '/wheel'),
+                    onTap: () => context.push('${RouteConstants.pathTodos}/wheel'),
                   ),
                 ),
               ],

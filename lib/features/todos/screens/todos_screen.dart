@@ -113,7 +113,7 @@ class _TodosScreenState extends ConsumerState<TodosScreen> with SingleTickerProv
         children: [
           FloatingActionButton.small(
             heroTag: 'wheel',
-            onPressed: () => context.push(RouteConstants.pathTodos + '/wheel'),
+            onPressed: () => context.push('${RouteConstants.pathTodos}/wheel'),
             child: const Icon(IconConstants.actionSpin)
                 .animate(onPlay: (c) => c.repeat(reverse: true))
                 .rotate(begin: -0.05, end: 0.05, duration: const Duration(seconds: 2)),
@@ -121,7 +121,7 @@ class _TodosScreenState extends ConsumerState<TodosScreen> with SingleTickerProv
           const SizedBox(height: NumericConstants.paddingSmall),
           FloatingActionButton(
             heroTag: 'add',
-            onPressed: () => context.push(RouteConstants.pathTodos + '/add'),
+            onPressed: () => context.push('${RouteConstants.pathTodos}/add'),
             child: const Icon(IconConstants.actionAdd),
           )
               .animate().fadeIn(delay: const Duration(milliseconds: 100)).scale()
