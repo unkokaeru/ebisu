@@ -36,37 +36,8 @@ jobs:
       - run: flutter pub get
       - run: flutter test
 
-  # Build for Web and deploy to GitHub Pages
-  web:
-    name: Web
-    runs-on: ubuntu-latest
-    needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.5'
-          channel: 'stable'
-          cache: true
-      - run: flutter pub get
-      - run: flutter build web --release --base-href "/ebisu/"
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: build/web
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  # Web build is disabled because Isar database doesn't support web platform
+  # To enable web, replace Isar with a web-compatible database like Hive or drift
 
   # Build Android APK
   android:
@@ -86,7 +57,7 @@ jobs:
           channel: 'stable'
           cache: true
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build apk --release --no-tree-shake-icons
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
@@ -107,6 +78,10 @@ jobs:
           flutter-version: '3.24.5'
           channel: 'stable'
           cache: true
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install --repo-update || flutter precache --ios && pod install --repo-update
       - run: flutter pub get
       - run: flutter build ios --release --no-codesign
       - name: Archive iOS build
@@ -133,6 +108,10 @@ jobs:
           flutter-version: '3.24.5'
           channel: 'stable'
           cache: true
+      - name: Install CocoaPods
+        run: |
+          cd macos
+          pod install --repo-update || flutter precache --macos && pod install --repo-update
       - run: flutter pub get
       - run: flutter build macos --release
       - name: Archive macOS build
@@ -204,7 +183,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    needs: [web, android, ios, macos, windows, linux]
+    needs: [android, ios, macos, windows, linux]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
@@ -239,7 +218,6 @@ jobs:
             - **macOS**: ebisu-macos.zip
             - **Windows**: ebisu-windows.zip
             - **Linux**: ebisu-linux.tar.gz
-            - **Web**: [Play online](https://${{ github.repository_owner }}.github.io/ebisu/)
           files: |
             artifacts/ebisu-android.apk
             artifacts/ebisu-ios.zip
