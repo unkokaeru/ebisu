@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:ebisu/shared/models/models.dart';
@@ -18,7 +19,14 @@ class DatabaseService {
   static Future<void> initialize() async {
     if (_instance != null) return;
 
-    final directory = await getApplicationDocumentsDirectory();
+    final String directoryPath;
+    if (kIsWeb) {
+      // On web, Isar uses IndexedDB - use empty string for directory
+      directoryPath = '';
+    } else {
+      final directory = await getApplicationDocumentsDirectory();
+      directoryPath = directory.path;
+    }
 
     _instance = await Isar.open(
       [
@@ -32,7 +40,7 @@ class DatabaseService {
         SkillSchema,
         AchievementSchema,
       ],
-      directory: directory.path,
+      directory: directoryPath,
       name: 'ebisu_database',
     );
 
