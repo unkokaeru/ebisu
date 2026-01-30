@@ -6,11 +6,11 @@ Built because free online tools are fragmented. One app, all features, with gami
 
 ## Features
 
-- **Quests** — Tasks with Eisenhower matrix prioritisation and weighted wheel selection
-- **Rituals** — Morning/evening routines with progress tracking
-- **Skills** — D&D-style abilities (STR, DEX, CON, INT, WIS, CHA) levelled through quests
-- **Streaks** — Daily activity tracking with XP rewards
-- **Achievements** — Unlock milestones as you progress
+- **Quests**: Tasks with Eisenhower matrix prioritisation and weighted wheel selection
+- **Rituals**: Morning/evening routines with progress tracking
+- **Skills**: D&D-style abilities (STR, DEX, CON, INT, WIS, CHA) levelled through quests
+- **Streaks**: Daily activity tracking with XP rewards
+- **Achievements**: Unlock milestones as you progress
 
 ## Install
 
