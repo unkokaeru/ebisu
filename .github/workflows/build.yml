@@ -109,7 +109,7 @@ jobs:
       - run: flutter pub get
       - name: Install CocoaPods
         run: cd macos && pod install --repo-update
-      - run: flutter build macos --release
+      - run: flutter build macos --release --no-tree-shake-icons
       - name: Archive macOS build
         run: |
           cd build/macos/Build/Products/Release
