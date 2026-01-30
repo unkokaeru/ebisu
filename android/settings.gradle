@@ -27,10 +27,16 @@ include ":app"
 gradle.beforeProject { project ->
     project.afterEvaluate {
         if (project.hasProperty('android')) {
+            // Fix namespace for AGP 8.x
             if (project.android.namespace == null) {
-                project.android.namespace = project.group.toString()
+                def grp = project.group?.toString()
+                if (grp != null && !grp.isEmpty()) {
+                    project.android.namespace = grp
+                }
             }
-            if (project.android.compileSdkVersion < 35) {
+            // Force compileSdk 35 for lStar attr support
+            def currentSdk = project.android.compileSdkVersion?.toString()
+            if (currentSdk == null || !currentSdk.contains("35")) {
                 project.android.compileSdk = 35
             }
         }
