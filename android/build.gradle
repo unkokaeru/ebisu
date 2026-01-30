@@ -13,6 +13,17 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// Fix for plugins missing namespace (required by AGP 8.0+)
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            if (project.android.namespace == null) {
+                project.android.namespace = project.group.toString()
+            }
+        }
+    }
+}
+
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
