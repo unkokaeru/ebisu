@@ -26,8 +26,13 @@ include ":app"
 
 gradle.beforeProject { project ->
     project.afterEvaluate {
-        if (project.hasProperty('android') && project.android.namespace == null) {
-            project.android.namespace = project.group.toString()
+        if (project.hasProperty('android')) {
+            if (project.android.namespace == null) {
+                project.android.namespace = project.group.toString()
+            }
+            if (project.android.compileSdkVersion < 35) {
+                project.android.compileSdk = 35
+            }
         }
     }
 }
