@@ -45,6 +45,29 @@ dev_dependencies:
   build_runner: ^2.4.9
   riverpod_generator: ^2.4.0
   isar_generator: ^3.1.0+1
+  
+  # App Icon Generation
+  flutter_launcher_icons: ^0.14.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+  windows:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+  macos:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#C27B5C"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
 
 flutter:
   uses-material-design: true
+  
+  assets:
+    - assets/icon/
