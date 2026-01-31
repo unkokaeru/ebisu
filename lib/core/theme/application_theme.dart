@@ -10,7 +10,7 @@ class ApplicationTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      colorScheme: ColorScheme.light(
+      colorScheme: const ColorScheme.light(
         primary: ColorConstants.primaryLight,
         onPrimary: Colors.white,
         secondary: ColorConstants.secondaryLight,
@@ -31,7 +31,7 @@ class ApplicationTheme {
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
         ),
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: ColorConstants.backgroundLight,
         foregroundColor: ColorConstants.textPrimaryLight,
         elevation: NumericConstants.elevationNone,
@@ -42,7 +42,7 @@ class ApplicationTheme {
           fontWeight: FontWeight.w600,
         ),
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: ColorConstants.surfaceLight,
         selectedItemColor: ColorConstants.primaryLight,
         unselectedItemColor: ColorConstants.textSecondaryLight,
@@ -54,19 +54,19 @@ class ApplicationTheme {
         indicatorColor: ColorConstants.primaryLight.withOpacity(0.2),
         iconTheme: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return IconThemeData(color: ColorConstants.primaryLight);
+            return const IconThemeData(color: ColorConstants.primaryLight);
           }
-          return IconThemeData(color: ColorConstants.textSecondaryLight);
+          return const IconThemeData(color: ColorConstants.textSecondaryLight);
         }),
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return TextStyle(
+            return const TextStyle(
               color: ColorConstants.primaryLight,
               fontSize: 12,
               fontWeight: FontWeight.w600,
             );
           }
-          return TextStyle(
+          return const TextStyle(
             color: ColorConstants.textSecondaryLight,
             fontSize: 12,
           );
@@ -85,7 +85,7 @@ class ApplicationTheme {
           backgroundColor: ColorConstants.primaryLight,
           foregroundColor: Colors.white,
           elevation: NumericConstants.elevationLow,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: NumericConstants.paddingLarge,
             vertical: NumericConstants.paddingMedium,
           ),
@@ -97,8 +97,8 @@ class ApplicationTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: ColorConstants.primaryLight,
-          side: BorderSide(color: ColorConstants.primaryLight),
-          padding: EdgeInsets.symmetric(
+          side: const BorderSide(color: ColorConstants.primaryLight),
+          padding: const EdgeInsets.symmetric(
             horizontal: NumericConstants.paddingLarge,
             vertical: NumericConstants.paddingMedium,
           ),
@@ -117,21 +117,21 @@ class ApplicationTheme {
         fillColor: ColorConstants.cardLight,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.outlineLight),
+          borderSide: const BorderSide(color: ColorConstants.outlineLight),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.outlineLight),
+          borderSide: const BorderSide(color: ColorConstants.outlineLight),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.primaryLight, width: 2),
+          borderSide: const BorderSide(color: ColorConstants.primaryLight, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.errorLight),
+          borderSide: const BorderSide(color: ColorConstants.errorLight),
         ),
-        contentPadding: EdgeInsets.all(NumericConstants.paddingMedium),
+        contentPadding: const EdgeInsets.all(NumericConstants.paddingMedium),
       ),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.resolveWith((states) {
@@ -148,7 +148,7 @@ class ApplicationTheme {
       chipTheme: ChipThemeData(
         backgroundColor: ColorConstants.surfaceLight,
         selectedColor: ColorConstants.primaryLight.withOpacity(0.2),
-        labelStyle: TextStyle(color: ColorConstants.textPrimaryLight),
+        labelStyle: const TextStyle(color: ColorConstants.textPrimaryLight),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusSmall),
         ),
@@ -161,27 +161,27 @@ class ApplicationTheme {
       ),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: ColorConstants.textPrimaryLight,
-        contentTextStyle: TextStyle(color: Colors.white),
+        contentTextStyle: const TextStyle(color: Colors.white),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusSmall),
         ),
         behavior: SnackBarBehavior.floating,
       ),
-      progressIndicatorTheme: ProgressIndicatorThemeData(
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: ColorConstants.primaryLight,
         linearTrackColor: ColorConstants.outlineLight,
       ),
-      sliderTheme: SliderThemeData(
+      sliderTheme: const SliderThemeData(
         activeTrackColor: ColorConstants.primaryLight,
         thumbColor: ColorConstants.primaryLight,
         inactiveTrackColor: ColorConstants.outlineLight,
       ),
-      dividerTheme: DividerThemeData(
+      dividerTheme: const DividerThemeData(
         color: ColorConstants.outlineLight,
         thickness: 1,
       ),
       listTileTheme: ListTileThemeData(
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
           horizontal: NumericConstants.paddingMedium,
           vertical: NumericConstants.paddingSmall,
         ),
@@ -197,7 +197,7 @@ class ApplicationTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      colorScheme: ColorScheme.dark(
+      colorScheme: const ColorScheme.dark(
         primary: ColorConstants.primaryDark,
         onPrimary: ColorConstants.textPrimaryLight,
         secondary: ColorConstants.secondaryDark,
@@ -218,7 +218,7 @@ class ApplicationTheme {
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
         ),
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: ColorConstants.backgroundDark,
         foregroundColor: ColorConstants.textPrimaryDark,
         elevation: NumericConstants.elevationNone,
@@ -229,7 +229,7 @@ class ApplicationTheme {
           fontWeight: FontWeight.w600,
         ),
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: ColorConstants.surfaceDark,
         selectedItemColor: ColorConstants.primaryDark,
         unselectedItemColor: ColorConstants.textSecondaryDark,
@@ -241,19 +241,19 @@ class ApplicationTheme {
         indicatorColor: ColorConstants.primaryDark.withOpacity(0.2),
         iconTheme: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return IconThemeData(color: ColorConstants.primaryDark);
+            return const IconThemeData(color: ColorConstants.primaryDark);
           }
-          return IconThemeData(color: ColorConstants.textSecondaryDark);
+          return const IconThemeData(color: ColorConstants.textSecondaryDark);
         }),
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return TextStyle(
+            return const TextStyle(
               color: ColorConstants.primaryDark,
               fontSize: 12,
               fontWeight: FontWeight.w600,
             );
           }
-          return TextStyle(
+          return const TextStyle(
             color: ColorConstants.textSecondaryDark,
             fontSize: 12,
           );
@@ -272,7 +272,7 @@ class ApplicationTheme {
           backgroundColor: ColorConstants.primaryDark,
           foregroundColor: ColorConstants.textPrimaryLight,
           elevation: NumericConstants.elevationLow,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: NumericConstants.paddingLarge,
             vertical: NumericConstants.paddingMedium,
           ),
@@ -284,8 +284,8 @@ class ApplicationTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: ColorConstants.primaryDark,
-          side: BorderSide(color: ColorConstants.primaryDark),
-          padding: EdgeInsets.symmetric(
+          side: const BorderSide(color: ColorConstants.primaryDark),
+          padding: const EdgeInsets.symmetric(
             horizontal: NumericConstants.paddingLarge,
             vertical: NumericConstants.paddingMedium,
           ),
@@ -304,21 +304,21 @@ class ApplicationTheme {
         fillColor: ColorConstants.cardDark,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.outlineDark),
+          borderSide: const BorderSide(color: ColorConstants.outlineDark),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.outlineDark),
+          borderSide: const BorderSide(color: ColorConstants.outlineDark),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.primaryDark, width: 2),
+          borderSide: const BorderSide(color: ColorConstants.primaryDark, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusMedium),
-          borderSide: BorderSide(color: ColorConstants.errorDark),
+          borderSide: const BorderSide(color: ColorConstants.errorDark),
         ),
-        contentPadding: EdgeInsets.all(NumericConstants.paddingMedium),
+        contentPadding: const EdgeInsets.all(NumericConstants.paddingMedium),
       ),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.resolveWith((states) {
@@ -335,7 +335,7 @@ class ApplicationTheme {
       chipTheme: ChipThemeData(
         backgroundColor: ColorConstants.surfaceDark,
         selectedColor: ColorConstants.primaryDark.withOpacity(0.2),
-        labelStyle: TextStyle(color: ColorConstants.textPrimaryDark),
+        labelStyle: const TextStyle(color: ColorConstants.textPrimaryDark),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusSmall),
         ),
@@ -348,27 +348,27 @@ class ApplicationTheme {
       ),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: ColorConstants.textPrimaryDark,
-        contentTextStyle: TextStyle(color: ColorConstants.textPrimaryLight),
+        contentTextStyle: const TextStyle(color: ColorConstants.textPrimaryLight),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(NumericConstants.borderRadiusSmall),
         ),
         behavior: SnackBarBehavior.floating,
       ),
-      progressIndicatorTheme: ProgressIndicatorThemeData(
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: ColorConstants.primaryDark,
         linearTrackColor: ColorConstants.outlineDark,
       ),
-      sliderTheme: SliderThemeData(
+      sliderTheme: const SliderThemeData(
         activeTrackColor: ColorConstants.primaryDark,
         thumbColor: ColorConstants.primaryDark,
         inactiveTrackColor: ColorConstants.outlineDark,
       ),
-      dividerTheme: DividerThemeData(
+      dividerTheme: const DividerThemeData(
         color: ColorConstants.outlineDark,
         thickness: 1,
       ),
       listTileTheme: ListTileThemeData(
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
           horizontal: NumericConstants.paddingMedium,
           vertical: NumericConstants.paddingSmall,
         ),

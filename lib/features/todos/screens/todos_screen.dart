@@ -77,7 +77,7 @@ class _TodosScreenState extends ConsumerState<TodosScreen> with SingleTickerProv
                         size: NumericConstants.iconSizeSmall,
                       ),
                       const SizedBox(width: NumericConstants.paddingSmall),
-                      Text(StringConstants.todosFilterAll),
+                      const Text(StringConstants.todosFilterAll),
                     ],
                   ),
                 ),
@@ -143,7 +143,7 @@ class _TodosScreenState extends ConsumerState<TodosScreen> with SingleTickerProv
         : todos.where((t) => t.categoryId == _selectedCategoryFilter).toList();
 
     if (filteredTodos.isEmpty) {
-      return EmptyStateWidget(
+      return const EmptyStateWidget(
         icon: IconConstants.empty,
         title: StringConstants.todosNoTasks,
         subtitle: StringConstants.todosAddFirstTask,
@@ -384,7 +384,7 @@ class _TodosScreenState extends ConsumerState<TodosScreen> with SingleTickerProv
         : todos.where((t) => t.categoryId == _selectedCategoryFilter).toList();
 
     if (filteredTodos.isEmpty) {
-      return EmptyStateWidget(
+      return const EmptyStateWidget(
         icon: IconConstants.statusComplete,
         title: StringConstants.todosNoTasks,
         subtitle: 'Complete some tasks to see them here',

@@ -510,7 +510,7 @@ class _SkillsScreenState extends ConsumerState<SkillsScreen> {
               onPressed: () async {
                 skill.abilityIndex = selectedAbilityIndex;
                 await PlayerProfileController.updateSkill(skill);
-                if (mounted) Navigator.pop(context);
+                if (context.mounted) Navigator.pop(context);
               },
               child: const Text(StringConstants.save),
             ),
@@ -535,7 +535,7 @@ class _SkillsScreenState extends ConsumerState<SkillsScreen> {
           TextButton(
             onPressed: () async {
               await PlayerProfileController.deleteSkill(skill.id);
-              if (mounted) Navigator.pop(context);
+              if (context.mounted) Navigator.pop(context);
             },
             style: TextButton.styleFrom(
               foregroundColor: Theme.of(context).colorScheme.error,

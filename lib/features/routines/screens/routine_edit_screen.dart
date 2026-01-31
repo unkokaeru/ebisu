@@ -80,7 +80,7 @@ class _RoutineEditScreenState extends ConsumerState<RoutineEditScreen> {
                     name: nameController.text.trim(),
                     abilityIndex: selectedAbilityIndex,
                   );
-                  if (mounted) {
+                  if (context.mounted) {
                     Navigator.pop(context);
                   }
                 }
@@ -251,7 +251,7 @@ class _RoutineEditScreenState extends ConsumerState<RoutineEditScreen> {
                   item.name = controller.text.trim();
                   item.abilityIndex = selectedAbilityIndex;
                   await RoutineController.updateRoutineItem(item);
-                  if (mounted) Navigator.pop(context);
+                  if (context.mounted) Navigator.pop(context);
                 }
               },
               child: const Text(StringConstants.save),
@@ -276,7 +276,7 @@ class _RoutineEditScreenState extends ConsumerState<RoutineEditScreen> {
           TextButton(
             onPressed: () async {
               await RoutineController.deleteRoutineItem(item.id);
-              if (mounted) Navigator.pop(context);
+              if (context.mounted) Navigator.pop(context);
             },
             child: Text(
               StringConstants.delete,

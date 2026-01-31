@@ -87,7 +87,7 @@ final organizationLogForCategoryProvider = Provider.family<DailyOrganizationLog?
 
 final organizationHistoryProvider = StreamProvider.family<List<DailyOrganizationLog>, int>((ref, categoryId) async* {
   final isar = DatabaseService.instance;
-  final startDate = DateTime.now().subtract(Duration(days: NumericConstants.chartHistoryDays));
+  final startDate = DateTime.now().subtract(const Duration(days: NumericConstants.chartHistoryDays));
 
   await for (final _ in isar.dailyOrganizationLogs.watchLazy(fireImmediately: true)) {
     yield await isar.dailyOrganizationLogs

@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 // Ebisu App Icon Generator
 // A standalone Dart script that creates app icons using dart:ui
 //

@@ -38,7 +38,7 @@ class ExperienceProgressBar extends StatelessWidget {
                     : ColorConstants.experienceBarEmpty,
               ),
               AnimatedContainer(
-                duration: Duration(milliseconds: NumericConstants.animationDurationMedium),
+                duration: const Duration(milliseconds: NumericConstants.animationDurationMedium),
                 curve: Curves.easeOutCubic,
                 height: height,
                 width: double.infinity,

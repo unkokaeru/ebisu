@@ -188,7 +188,7 @@ class ProfileScreen extends ConsumerWidget {
                             shape: BoxShape.circle,
                             color: theme.colorScheme.primary.withOpacity(0.3),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             IconConstants.profileAvatar,
                             size: 38,
                             color: Colors.white,
@@ -944,7 +944,7 @@ class ProfileScreen extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.military_tech, size: 20, color: Colors.amber),
+                const Icon(Icons.military_tech, size: 20, color: Colors.amber),
                 const SizedBox(width: 8),
                 Text(
                   StringConstants.profileAchievements,

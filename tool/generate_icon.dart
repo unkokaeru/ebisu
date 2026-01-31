@@ -1,15 +1,11 @@
 // ignore_for_file: avoid_print
-import 'dart:io';
-import 'dart:ui' as ui;
-import 'dart:typed_data';
-import 'package:flutter/material.dart';
 
-/// Generates app icons for Ebisu with a stylized "E" logo.
-/// Run with: dart run tool/generate_icon.dart
-/// 
-/// NOTE: This script requires Flutter environment.
-/// For easier generation, use the pre-made icons or generate via
-/// online tools like Figma, Canva, or icon generators.
+// Generates app icons for Ebisu with a stylized "E" logo.
+// Run with: dart run tool/generate_icon.dart
+// 
+// NOTE: This script requires Flutter environment.
+// For easier generation, use the pre-made icons or generate via
+// online tools like Figma, Canva, or icon generators.
 
 void main() async {
   print('Ebisu Icon Generator');

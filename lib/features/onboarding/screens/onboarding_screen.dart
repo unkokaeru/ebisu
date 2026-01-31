@@ -99,9 +99,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       const SizedBox(height: NumericConstants.paddingMedium),
                       TextFormField(
                         controller: _nameController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: StringConstants.onboardingNameHint,
-                          prefixIcon: const Icon(Icons.person_rounded),
+                          prefixIcon: Icon(Icons.person_rounded),
                         ),
                         textCapitalization: TextCapitalization.words,
                         textInputAction: TextInputAction.done,
@@ -145,9 +145,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                                     color: Colors.white,
                                   ),
                                 )
-                              : Text(
+                              : const Text(
                                   StringConstants.onboardingStartButton,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
                                   ),

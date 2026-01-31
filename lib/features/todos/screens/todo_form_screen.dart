@@ -160,7 +160,7 @@ class _TodoFormScreenState extends ConsumerState<TodoFormScreen> {
                   children: [
                     TextFormField(
                       controller: _titleController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: StringConstants.todosTaskTitle,
                         hintText: StringConstants.todosTaskTitleHint,
                       ),
@@ -404,14 +404,14 @@ class _TodoFormScreenState extends ConsumerState<TodoFormScreen> {
             ),
             TextButton(
               onPressed: () async {
-                if (nameController.text.trim().isNotEmpty) {
+                  if (nameController.text.trim().isNotEmpty) {
                   final category = await TodoController.createCategory(
                     name: nameController.text.trim(),
                     iconCodePoint: IconConstants.categoryIcons[selectedIconIndex].codePoint,
                     colorValue: ColorConstants.categoryColors[selectedColorIndex].value,
                     abilityIndex: selectedAbilityIndex,
                   );
-                  if (mounted) {
+                  if (context.mounted) {
                     setState(() => _selectedCategoryId = category.id);
                     Navigator.pop(context);
                   }
@@ -548,7 +548,7 @@ class _TodoFormScreenState extends ConsumerState<TodoFormScreen> {
                   category.colorValue = ColorConstants.categoryColors[selectedColorIndex].value;
                   category.abilityIndex = selectedAbilityIndex;
                   await TodoController.updateCategory(category);
-                  if (mounted) {
+                  if (context.mounted) {
                     Navigator.pop(context);
                   }
                 }
@@ -575,7 +575,7 @@ class _TodoFormScreenState extends ConsumerState<TodoFormScreen> {
           TextButton(
             onPressed: () async {
               await TodoController.deleteCategory(category.id);
-              if (mounted) {
+              if (context.mounted) {
                 Navigator.pop(context); // Close confirm dialog
                 Navigator.pop(context); // Close edit dialog
                 if (_selectedCategoryId == category.id) {
