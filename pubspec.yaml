@@ -1,7 +1,7 @@
 name: ebisu
 description: "Personal productivity RPG with quest management and skill tracking"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.1.1+1
 
 environment:
   sdk: ^3.5.4
